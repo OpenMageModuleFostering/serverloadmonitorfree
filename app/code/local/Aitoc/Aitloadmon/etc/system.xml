@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <system>
+            <groups>
+                <aitloadmon translate="label" module="aitloadmon">
+                    <label>Server Load Monitor</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1010</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <load_yellow translate="label">
+                            <label>Yellow load level after</label>
+                            <comment><![CDATA[Yellow load level means average server load (sec); default value is 3 sec (Green load level will be if the response time will be less or equal 3 sec that means minor server load)]]></comment>
+							<frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </load_yellow>
+
+                        <load_red translate="label">
+                            <label>Red load level after</label>
+							<comment><![CDATA[Red load level  means peak server load (sec); default value is 7 sec]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>600</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </load_red>
+
+
+                        <load_black translate="label">
+                            <label>Black load level after</label>
+							<comment><![CDATA[Black load level means critical load or server failure (sec); default value is 10 sec]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>700</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </load_black>
+
+                        <manage_link translate="label">
+                            <label>Manage data compression</label>
+							<frontend_model>aitloadmon/adminhtml_aitlink</frontend_model>							
+                            <sort_order>800</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </manage_link>
+
+                        <exclude_urls translate="label">
+                            <label>Exclude urls from monitoring</label>
+							<comment><![CDATA[Some pages might always be slow while the rest of the site is functioning properly. Such pages might lead the SLM extension to act as if the whole site (or a group of pages) is in the critical load peak zone. If you are aware of such pages, please specify the URLs to exclude them from monitoring and thus adjust SLM sensitivity. Each URL on the new line, ex.: /example or /example.html]]></comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>900</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </exclude_urls>
+                    </fields>
+                </aitloadmon>
+            </groups>
+        </system>
+    </sections>
+</config>
+<!--
+/**
+ * @copyright  Copyright (c) 2013 AITOC, Inc. 
+ * @license License agreement could be found at the root folder of this package
+ */
+ -->

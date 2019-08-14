@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <system>
+            <children>
+                <stats module="aitloadmon">
+                    <title>Server Load Monitor</title>
+                    <sort_order>2</sort_order>
+                    <action>adminhtml/aitloadmon</action>
+                    <children>
+                        <stats translate="title" module="aitloadmon">
+                            <title>View Stats</title>
+                            <action>adminhtml/aitloadmon</action>
+                            <sort_order>10</sort_order>
+                        </stats>
+                        <calc translate="title" module="aitloadmon">
+                            <title>Info for Magento Server Configuration Calculator</title>
+                            <action>adminhtml/calculator</action>
+                            <sort_order>20</sort_order>
+                        </calc>
+                    </children>
+                </stats>
+            </children>
+        </system>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <stats>
+							    <title>Server Load Monitor</title>
+								<sort_order>2</sort_order>
+                                <children>
+                                    <stats>
+                                        <title>View Stats</title>
+										<sort_order>10</sort_order>
+                                    </stats>
+									<calc>
+										<title>Info for Magento Server Configuration Calculator</title>
+										<sort_order>20</sort_order>
+									</calc>									
+                                </children>
+                            </stats>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>	
+</config>
+<!--
+/**
+ * @copyright  Copyright (c) 2013 AITOC, Inc. 
+ * @license License agreement could be found at the root folder of this package
+ */
+ -->

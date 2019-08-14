@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_aitloadmon_index>
+        <reference name="head">
+            <action method="addJs"><script>aitoc/aitloadmon/raphael-min.js</script></action>
+            <action method="addJs"><script>aitoc/aitloadmon/grafico.min.js</script></action>
+            <action method="addJs"><script>aitoc/aitloadmon/grafico.line.custom.js</script></action>
+            <action method="addJs"><script>aitoc/aitloadmon/grafico.bar.custom.js</script></action>
+        </reference>
+        <reference name="content">
+            <block type="aitloadmon/adminhtml_aitloadmon" name="main_bl" template="aitloadmon/graph.phtml">
+                <block type="aitloadmon/adminhtml_aitloadmon_filter" name="aitload_filter" as="filter" />
+                <block type="aitloadmon/adminhtml_aitloadmon_lineGraph" name="aitload_lineGraph" as="lineGraph" template="aitloadmon/line.phtml" />
+                <block type="aitloadmon/adminhtml_aitloadmon_barGraph" name="aitload_barGraph" as="barGraph" template="aitloadmon/bar.phtml" />
+                <block type="core/template" name="aitload_quickFilter" as="quickFilter" template="aitloadmon/quick.phtml" />
+            </block>
+            <block type="core/template" name="system" as="system_block" template="aitloadmon/system.phtml"/>
+        </reference>
+    </adminhtml_aitloadmon_index>
+    <adminhtml_aitloadmon_manage>
+        <reference name="content">
+            <block type="core/template" name="back" as="back_button" template="aitloadmon/back.phtml"/>
+            <block type="aitloadmon/adminhtml_manage" name="manage" as="manage_data"/>
+            <block type="core/template" name="system" as="system_block" template="aitloadmon/system.phtml"/>
+        </reference>
+    </adminhtml_aitloadmon_manage>
+    <adminhtml_calculator_index>
+        <reference name="content">
+            <block type="aitloadmon/adminhtml_calculator" name="aitload_calculator" as="calculator" /> 
+            <!--block type="aitloadmon/adminhtml_calculatorResult" name="aitload_calculator_result" as="calculator_result" /-->
+        </reference>
+    </adminhtml_calculator_index>
+    <!--adminhtml_calculator_index>
+        <reference name="content">
+            <block type="core/template" name="sysInfo" as="sysInfo_block" template="aitloadmon/sysInfo.phtml"/>
+        </reference>
+    </adminhtml_calculator_index-->
+    <adminhtml_calculator_submit>
+        <reference name="content">
+            <block type="aitloadmon/adminhtml_calculatorResult" name="aitload_calculator_result" as="calculator_result" template="aitloadmon/result.phtml"/>
+        </reference>
+    </adminhtml_calculator_submit>
+    <default>
+        <reference name="content">
+            <block type="aitloadmon/adminhtml_indicator" name="aitloadmon_indicator" template="aitloadmon/indicator.phtml"/>
+        </reference>
+    </default>
+
+</layout>
+<!--
+/**
+ * @copyright  Copyright (c) 2013 AITOC, Inc. 
+ * @license License agreement could be found at the root folder of this package
+ */
+ -->
