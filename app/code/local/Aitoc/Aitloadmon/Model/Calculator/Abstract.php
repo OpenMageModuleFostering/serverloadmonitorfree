@@ -40,7 +40,7 @@ abstract class Aitoc_Aitloadmon_Model_Calculator_Abstract
             {
                 return $data;
             }
-            if($data = $this->_exec('cat '.$file))
+            if($data = $this->_exec('cat '.$file.' 2>/dev/null'))
             {
                 return $data;
             }

@@ -40,7 +40,7 @@ class Aitoc_Aitloadmon_Model_Mysql4_Aitloadmon_Collection extends Mage_Core_Mode
                 break;
         }
 
-        return 'DATE_FORMAT (`measure_time`, "'.$format.'"), page_group_id';
+        return 'DATE_FORMAT(`measure_time`, "'.$format.'"), page_group_id';
     }
 
     /**

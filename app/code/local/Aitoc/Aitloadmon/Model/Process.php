@@ -153,11 +153,7 @@ class Aitoc_Aitloadmon_Model_Process extends Mage_Core_Controller_Varien_Front
         {
             if(isset($dataItem['end']))
             {
-                $minute = ceil($dataItem['end']/60);
-                if(!isset($dataItem['end']))
-                {
-                    continue;
-                }
+                $minute = ceil((int)$dataItem['end']/60);
                 if(!isset($return[$minute]))
                 {
                     $return[$minute] = array();
@@ -305,5 +301,19 @@ class Aitoc_Aitloadmon_Model_Process extends Mage_Core_Controller_Varien_Front
         }
 
     }
-
+    
+    protected function _processRewriteUrl($url)
+    {
+        $startPos = strpos($url, '{');
+        if ($startPos!==false) {
+            $endPos = strpos($url, '}');
+            $routeName = substr($url, $startPos+1, $endPos-$startPos-1);
+		$router = Mage::getModel('aitloadmon/router');//$this->getRouterByRoute($routeName);
+            if ($router) {
+                $fronName = $router->getFrontNameByRoute($routeName);
+                $url = str_replace('{'.$routeName.'}', $fronName, $url);
+            }
+        }
+        return $url;
+    }
 }

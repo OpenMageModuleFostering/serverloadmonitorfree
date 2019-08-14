@@ -99,7 +99,7 @@ class Aitoc_Aitloadmon_Model_Router extends Mage_Core_Controller_Varien_Router_S
             }
 
             //checking if this place should be secure
-            $this->_checkShouldBeSecure($request, '/'.$module.'/'.$controller.'/'.$action);
+            //$this->_checkShouldBeSecure($request, '/'.$module.'/'.$controller.'/'.$action);
 
             $controllerClassName = $this->_validateControllerClassName($realModule, $controller);
             if (!$controllerClassName) {

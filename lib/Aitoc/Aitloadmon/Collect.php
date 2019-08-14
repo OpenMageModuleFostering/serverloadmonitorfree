@@ -12,6 +12,7 @@ class Aitoc_Aitloadmon_Collect
     private static $_enabled;
     private static $_loadLevel;
     private static $_pathAddon;
+    private static $_timeOffset = 0;
     private $_uniqueId;
     private $_startWritten;
 
@@ -109,9 +110,10 @@ class Aitoc_Aitloadmon_Collect
         }
         else
         {
+            $microtime = microtime(true) + self::$_timeOffset;
             $saveData = array(
                 $this->_getUniqueId() => array(
-                    'end'          => microtime(true),
+                    'end'          => $microtime,
                 )
             );
         }
@@ -263,4 +265,33 @@ class Aitoc_Aitloadmon_Collect
         }
         return self::$_loadLevel;
     }
+    
+    /**
+     * Gets time offset
+     *
+     * @return int
+     */    
+    public static function getTimeOffset()
+    {
+        return self::$_timeOffset;
+    }
+    
+    /**
+     * Sets time offset
+     *
+     */    
+    public static function setTimeOffset($offset)
+    {
+        self::$_timeOffset = $offset;
+    }
+
+    /**
+     * Adds time offset
+     *
+     */        
+    public static function addTimeOffset($offset)
+    {
+        self::$_timeOffset += $offset;
+    }
+    
 }

@@ -39,7 +39,7 @@ class Aitoc_Aitloadmon_Model_Calculator_Software extends Aitoc_Aitloadmon_Model_
      */
     protected function _getOsInfo()
     {
-        if(!($os = $this->_exec('lsb_release -a')) && !($os = $this->_readOsInfoFromFiles()))
+        if(!($os = $this->_exec('lsb_release -a 2>/dev/null')) && !($os = $this->_readOsInfoFromFiles()))
         {
             $os = php_uname();
         }
