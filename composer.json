@@ -1,15 +1,13 @@
 {
     "name": "OpenMageModuleFostering/ServerLoadMonitorFree",
     "type": "magento-module",
-    "license": "-License---proprietary-(can-be-found-in-module-package)-",
+    "license": "Free",
     "homepage": "",
-    "description": "It’s quite frustrating to have your server overloaded or crashed when trade is brisk and sales are booming. Neither is it a good thing to happen to a fledging e-commerce company still busy building up credibility with customers. Crash prevention is a serious issue and a valid goal. And even if your server is powerful enough and properly customized it is still useful to keep an eye on it, monitor your Magento store traffic load page by page. 
-
-Server Load Monitor is just the right extension to serve all the above mentioned purposes. It will provide you with a comprehensive overview of load-related processes essential for trouble-free performance of your Magento server. ",
+    "description": "Server Load Monitor",
     "authors": [
     {
-        "name": "AITOC",
-        "email": "aitoc-connect@aitoc.com"
+        "name": "Aitoc",
+        "email": "sales@aitoc.com"
     }
 ],
     "suggest": {
