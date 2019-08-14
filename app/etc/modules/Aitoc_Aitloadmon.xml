@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Aitoc_Aitloadmon>
+            <active>true</active>
+            <codePool>local</codePool>
+            <self_name>Server Load Monitor Free</self_name>
+        </Aitoc_Aitloadmon>
+    </modules>
+</config>
+<!--
+/**
+ * @copyright  Copyright (c) 2013 AITOC, Inc. 
+ * @license License agreement could be found at the root folder of this package
+ */
+ -->

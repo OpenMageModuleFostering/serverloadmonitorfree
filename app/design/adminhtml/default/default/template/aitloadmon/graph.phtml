@@ -1,0 +1,28 @@
+<?php
+/**
+ * @copyright  Copyright (c) 2013 AITOC, Inc. 
+ * @license License agreement could be found at the root folder of this package
+ */
+ ?>
+<ul class="messages">
+    <?php if(!Mage::getStoreConfig('system/aitloadmon/disable_calc_info_sending')):?>
+    <li class="notice-msg">
+        <p><?php echo Mage::helper('aitloadmon')->__('Please note that collected data of Server Load Monitor extension will be sent to AITOC’s Magento Server Configuration Calculator in order to configure and recommend you better server settings.');?></p>
+    </li>
+    <?php endif; ?>
+    <li class="notice-msg">
+        <p><?php echo Mage::helper('aitloadmon')->__('Please note that the server time is used instead of your local one.');?></p>
+    </li>
+</ul>
+<?php echo $this->getChildHtml('quickFilter'); ?>
+<?php echo $this->getChildHtml('filter'); ?>
+<?php if(!$this->isEnoughDataToBuildGraph($this->getCollection()) || ($this->getCompare() && !$this->isEnoughDataToBuildGraph($this->getCompareCollection()))):?>
+<ul class="messages">
+    <li class="error-msg">
+        <p><?php echo Mage::helper('aitloadmon')->__('Sorry, there is not enough data for the selected period(s).');?></p>
+    </li>
+</ul>
+<?php else: ?>
+    <?php echo $this->getChildHtml('barGraph'); ?>
+    <?php echo $this->getChildHtml('lineGraph'); ?>
+<?php endif;?>
