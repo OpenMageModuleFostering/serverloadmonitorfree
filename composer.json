@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/ServerLoadMonitorFree",
+    "name": "OpenMageModuleFostering\/ServerLoadMonitorFree",
     "type": "magento-module",
     "license": "Free",
     "homepage": "",
     "description": "Server Load Monitor",
     "authors": [
-    {
-        "name": "Aitoc",
-        "email": "sales@aitoc.com"
-    }
-],
+        {
+            "name": "Aitoc",
+            "email": "sales@aitoc.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
